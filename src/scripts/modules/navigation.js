@@ -7,11 +7,14 @@ export function initNavigation() {
 
   const toggleMenu = () => {
     const isExpanded = toggleBtn.getAttribute('aria-expanded') === 'true';
-    toggleBtn.setAttribute('aria-expanded', !isExpanded);
+    const willOpen = !isExpanded;
+
+    toggleBtn.setAttribute('aria-expanded', String(willOpen));
     toggleBtn.classList.toggle('is-active');
     navMenu.classList.toggle('is-open');
     document.body.classList.toggle('no-scroll');
-    toggleBtn.textContent = isExpanded ? 'Menu' : 'Close';
+    toggleBtn.textContent = willOpen ? 'Close' : 'Menu';
+    toggleBtn.setAttribute('aria-label', willOpen ? 'Close menu' : 'Open menu');
   };
 
   toggleBtn.addEventListener('click', toggleMenu);
@@ -20,5 +23,9 @@ export function initNavigation() {
     link.addEventListener('click', () => {
       if (navMenu.classList.contains('is-open')) toggleMenu();
     });
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navMenu.classList.contains('is-open')) toggleMenu();
   });
 }

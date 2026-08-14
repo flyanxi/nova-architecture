@@ -58,6 +58,14 @@ img, picture, video, canvas, svg {
   height: auto;
 }
 
+a { color: inherit; }
+
+
+:focus-visible {
+  outline: 1px solid var(--color-text);
+  outline-offset: 4px;
+}
+
 .js-fade-in {
   opacity: 0;
   transform: translateY(30px);
@@ -67,4 +75,16 @@ img, picture, video, canvas, svg {
 .js-fade-in.is-visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .js-fade-in {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .project-card__media img {
+    transition: none;
+  }
 }

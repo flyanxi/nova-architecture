@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+  <meta name="theme-color" content="#0f0f0f">
+
   <!-- SEO & Open Graph -->
   <title>NOVA Architecture Bureau — Modern Residential & Commercial Architecture</title>
   <meta name="description" content="NOVA is an international architecture bureau specializing in modern residential and commercial architecture with an editorial luxury aesthetic.">
@@ -12,10 +13,18 @@
   <meta property="og:url" content="https://nova-architecture.com">
   <meta property="og:image" content="https://nova-architecture.com/src/assets/images/og-cover.jpg">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
   <!-- Loading styles -->
   <link rel="stylesheet" href="src/styles/base.css">
   <link rel="stylesheet" href="src/styles/components.css">
   <link rel="stylesheet" href="src/styles/layouts.css">
+
+  <noscript>
+    <style>.js-fade-in { opacity: 1 !important; transform: none !important; }</style>
+  </noscript>
 </head>
 <body>
 
@@ -41,6 +50,7 @@
     <!-- Section Hero -->
     <section class="hero">
       <div class="hero-content">
+        <span class="hero-eyebrow js-fade-in">Tallinn &amp; Berlin &mdash; Est. 2011</span>
         <h1 class="hero-title js-fade-in">Architecture as a clean form of space and light.</h1>
       </div>
     </section>
@@ -50,14 +60,13 @@
       <div class="portfolio__header js-fade-in">
         <h2>Selected Works</h2>
       </div>
-      
+
       <div class="portfolio-grid">
         <!-- Card 1 -->
         <article class="project-card js-fade-in">
           <a href="project-one.html" class="project-card__link" aria-label="View project: Villa K">
             <div class="project-card__media">
               <picture>
-                <source srcset="src/assets/images/villa-k-1200.webp" media="(max-width: 768px)" type="image/webp">
                 <source srcset="src/assets/images/villa-k-1200.webp" type="image/webp">
                 <img src="src/assets/images/villa-k-1200.jpg" alt="Minimalist interior of Villa K" loading="lazy" width="1200" height="1500">
               </picture>
@@ -74,7 +83,6 @@
           <a href="project-two.html" class="project-card__link" aria-label="View project: Space Gallery">
             <div class="project-card__media">
               <picture>
-                <source srcset="src/assets/images/gallery-1200.webp" media="(max-width: 768px)" type="image/webp">
                 <source srcset="src/assets/images/gallery-1200.webp" type="image/webp">
                 <img src="src/assets/images/gallery-1200.jpg" alt="Space contemporary art gallery" loading="lazy" width="1200" height="1500">
               </picture>
@@ -85,15 +93,44 @@
             </div>
           </a>
         </article>
+
+        <!-- Card 3 -->
+        <article class="project-card js-fade-in">
+          <a href="project-three.html" class="project-card__link" aria-label="View project: Studio Loft">
+            <div class="project-card__media project-card__media--placeholder"></div>
+            <div class="project-card__content">
+              <span class="project-card__category">Residential / 2024</span>
+              <h3 class="project-card__title">Studio Loft, Copenhagen</h3>
+            </div>
+          </a>
+        </article>
       </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Section Studio / About -->
+    <section class="studio" id="about">
+      <div class="studio-grid">
+        <div class="studio-media js-fade-in" aria-hidden="true"></div>
+        <div class="studio-text js-fade-in">
+          <span class="studio-eyebrow">The Studio</span>
+          <h2>A studio working at the edge of architecture and craft.</h2>
+          <p>NOVA designs houses, galleries and interiors that treat light as a material in its own right &mdash; spaces that feel inevitable rather than designed. Every project begins with the site, not the sketch.</p>
+          <div class="studio-stats">
+            <div><strong>14</strong><span>Completed Projects</span></div>
+            <div><strong>3</strong><span>International Awards</span></div>
+            <div><strong>2011</strong><span>Founded</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
   <footer class="site-footer" id="contact">
     <div class="footer-container">
-      
+
       <div class="footer-main js-fade-in">
-        
+
         <div class="footer-col">
           <a href="#" class="footer-logo">NOVA ARCHITECTURE</a>
           <div class="footer-contacts">
@@ -145,7 +182,6 @@
 
     </div>
   </footer>
-  </main>
 
   <!-- Loading a script as an ES6 module -->
   <script type="module" src="src/scripts/main.js"></script>

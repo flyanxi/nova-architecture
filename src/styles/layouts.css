@@ -3,13 +3,14 @@
   position: relative;
   min-height: 100vh;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
   padding: 8rem 2rem 4rem;
-  
-  background-image: 
-    linear-gradient(to right, rgba(15, 15, 15, 0.85) 45%, rgba(15, 15, 15, 0.4) 100%), 
+
+  background-image:
+    linear-gradient(to right, rgba(15, 15, 15, 0.85) 45%, rgba(15, 15, 15, 0.4) 100%),
     url('../assets/images/hero-1200.jpg');
-    
+
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -21,10 +22,19 @@
   margin: 0 auto;
 }
 
+.hero-eyebrow {
+  display: block;
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  margin-bottom: 1.5rem;
+}
+
 .hero-title {
   font-family: var(--font-secondary);
   font-size: clamp(3.5rem, 7vw, 6.5rem);
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.1;
   color: var(--color-text);
   max-width: 850px;
@@ -35,7 +45,7 @@
 .portfolio {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 6rem 4vw; 
+  padding: 6rem 4vw;
 }
 
 .portfolio__header {
@@ -47,7 +57,7 @@
 .portfolio__header h2 {
   font-family: var(--font-secondary);
   font-size: 3rem;
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: -0.02em;
 }
 
@@ -60,6 +70,72 @@
 
 .portfolio-grid .project-card:nth-child(even) {
   margin-top: 15rem;
+}
+
+/* Section Studio / About */
+.studio {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 6rem 4vw 10rem;
+}
+
+.studio-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 6vw;
+  align-items: center;
+}
+
+.studio-media {
+  aspect-ratio: 4 / 5;
+  background:
+    repeating-linear-gradient(135deg, rgba(244,244,242,0.04) 0 1px, transparent 1px 18px),
+    linear-gradient(160deg, #202020, #0c0c0c);
+}
+
+.studio-eyebrow {
+  display: block;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  margin-bottom: 1.25rem;
+}
+
+.studio-text h2 {
+  font-family: var(--font-secondary);
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 400;
+  line-height: 1.25;
+  margin-bottom: 1.5rem;
+  max-width: 20ch;
+}
+
+.studio-text p {
+  color: var(--color-muted);
+  max-width: 46ch;
+  margin-bottom: 2.5rem;
+}
+
+.studio-stats {
+  display: flex;
+  gap: 3rem;
+}
+.studio-stats div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.studio-stats strong {
+  font-family: var(--font-secondary);
+  font-size: 2rem;
+  font-weight: 400;
+}
+.studio-stats span {
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-muted);
 }
 
 /* Section Footer */
@@ -208,16 +284,23 @@
     grid-template-columns: 1fr;
     gap: 2.5rem;
   }
-  
+
   .footer-bottom {
     flex-direction: column;
     gap: 1rem;
     align-items: flex-start;
   }
-  
+
   .footer-legal {
     gap: 1.5rem;
   }
+
+  .studio-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .studio-media { max-width: 420px; }
 }
 
 /* Adaptive for Mobile */
@@ -225,14 +308,18 @@
   .portfolio {
     padding: 6rem 2rem;
   }
-  
+
   .portfolio-grid {
     grid-template-columns: 1fr;
     gap: 5rem;
   }
-  
+
   .portfolio-grid .project-card:nth-child(even) {
     margin-top: 0;
+  }
+
+  .studio {
+    padding: 5rem 2rem 7rem;
   }
 }
 
