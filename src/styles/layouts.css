@@ -81,16 +81,17 @@
 
 .studio-grid {
   display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
+  grid-template-columns: 1.1fr 0.9fr;
   gap: 6vw;
   align-items: center;
 }
 
 .studio-media {
+  order: 2;
   aspect-ratio: 4 / 5;
-  background:
-    repeating-linear-gradient(135deg, rgba(244,244,242,0.04) 0 1px, transparent 1px 18px),
-    linear-gradient(160deg, #202020, #0c0c0c);
+  background-image: url('../assets/images/studio.jpg');
+  background-size: cover;
+  background-position: center;
 }
 
 .studio-eyebrow {
